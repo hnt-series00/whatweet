@@ -34,7 +34,6 @@ class main():
         #print(tweet_list)
         fname = 'tweet_text'
 
-        #ファイル出力
         with open(fname, 'w',encoding='utf-8') as f:
             f.writelines(tweet_list)
         if language == 'Japanese':
@@ -44,16 +43,12 @@ class main():
             with open(fname, 'r',encoding='utf-8') as f:
                 reader = f.readline()
                 while reader:
-                    #Mecabで形態素解析を実施
                     node = mecab.parseToNode(reader)
-
                     while node:
                         word_type = node.feature.split(',')[0]
-
                         if word_type in ['形名詞', '動詞','名詞','副詞']:
                             words.append(node.surface)
                         node = node.next       
-
                     reader = f.readline()
 
             text_tweet = ' '.join(words)
@@ -63,6 +58,7 @@ class main():
             plt.imshow(wordcloud)
             plt.axis("off")
             plt.show()
+
         else:
             text_tweet = open(fname, encoding='utf-8').read()
             nltk.download('stopwords')
@@ -73,7 +69,6 @@ class main():
             plt.axis('off')
             plt.show()
             
-
 username= ''
 days = 100
 language = ''
