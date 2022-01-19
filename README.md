@@ -5,7 +5,7 @@ We will use [wordcloud](https://github.com/amueller/word_cloud)  to visualize th
 
 # How to install whatweet
 
-whattweew is available in public and can be installed by the following PyPI packaging command:
+whatweet is available in public and can be installed by the following PyPI packaging command:
 ```
 pip install whatweet
 ```
